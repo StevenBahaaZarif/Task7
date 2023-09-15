@@ -1,0 +1,32 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,700&display=swap"
+      rel="stylesheet"
+      />
+<link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+      />
+
+<nav style="margin: auto;">
+  <input checked id="home" type="radio" name="nav" />
+  <input id="find" type="radio" name="nav" />
+  <input id="like" type="radio" name="nav" />
+
+  <div class="indicator"></div>
+
+  <label class="home" for="home" routerLink="/products">
+    <span class="icon home uil uil-estate"></span>
+    <span class="text">Items</span>
+  </label>
+  <label class="find" for="find" routerLink="/movies">
+    <span class="icon find uil uil-film"></span>
+    <span class="text">Movies</span>
+  </label>
+  <label class="like" for="like" routerLink="/books">
+    <span class="icon like uil uil-books"></span>
+    <span class="text">Books</span>
+  </label>
+</nav>
+

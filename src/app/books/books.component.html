@@ -1,0 +1,31 @@
+<br>
+<br>
+<div class="title-bar">
+    Books Store
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  
+  <div class="wrap" *ngFor="let item of bookItems">
+    <div class="thumbnail">
+      <img src={{item.imageLink}}/>
+      <div class="overlay"><a href="#">Buy</a></div>
+    </div>
+    <div class="small-info">
+      {{item.title}}
+      <p *ngIf="item.showBookDetails">
+        {{ item.author }}
+       - {{ item.country }} 
+       -Year: {{ item.year }}
+       -Pages: {{ item.pages }}
+       <a href='{{ item.link}}' target=”_blank”>Click to Read</a>
+      </p>
+      <button class="btn btn-warning d-block m-1" (click)="showDetails(item.title)"> 
+        {{ item.showBookDetails ? "Hide" : "See" }} Details
+      </button>
+    </div>
+    
+    
+  </div>

@@ -1,0 +1,41 @@
+<br>
+<br>
+<div class="title-bar">
+    Product Store
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row w-75 mx-auto mt-5">
+    <input type="text" class="form-control" [(ngModel)]="searchValue" />
+  </div>
+  <br>
+  
+  <div class="wrap" *ngFor="let item of products">
+    <a [routerLink]="['/prodcutdetails',item.id]">
+    <div class="thumbnail">
+      <img [src]='item.image'>
+      <a (click)="printid(item.id)">
+      </a>
+      <div class="overlay">
+      <a href="#">Buy</a></div>
+    </div>
+    </a>
+    <div class="small-info">
+      {{item.title}}
+      <p *ngIf="item.showElecDetails">
+        {{ item.description }}
+      </p>
+      <span class="pull-right">{{item.price}} L.E</span>
+      <button class="btn btn-warning d-block m-1" (click)="showDetails(item.id)"> 
+        {{ item.showElecDetails ? "Hide" : "See" }} Details
+      </button>
+    </div>
+    
+    
+  </div>
+    
+

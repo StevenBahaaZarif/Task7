@@ -1,0 +1,53 @@
+<br>
+<br>
+<div class="title-bar">
+    Movies Store
+  </div>
+  <br>
+
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <button class="btn btn-primary float-end" (click)="changeLanguage()">
+     {{lang}}
+    </button>
+
+    <mat-paginator [length]="totalPages"
+    [pageSize]="itemsPerPage"
+    aria-label="Select page"
+    (page)="changePage($event)"
+    >
+  </mat-paginator>
+  </div>
+ 
+  <div class="row w-75 mx-auto mt-5">
+    <input type="text" class="form-control" [(ngModel)]="searchValue" />
+  </div>
+  
+  <br>
+  
+  <div class="wrap" *ngFor="let item of products">
+    <a [routerLink]="['/moviesdetails',item.id]">
+    <div class="thumbnail">
+      <img [src]='imagePath+item.poster_path'>
+      <a (click)="printid(item.id)">
+      </a>
+      <div class="overlay">
+      <a href="#">Buy</a></div>
+    </div>
+    </a>
+    <div class="small-info">
+      {{item.title}}
+      <p *ngIf="item.showElecDetails">
+        {{ item.overview }}
+      </p>
+      <span class="pull-right">{{item.price}} L.E</span>
+      <button class="btn btn-warning d-block m-1" (click)="showDetails(item.id)"> 
+        {{ item.showElecDetails ? "Hide" : "See" }} Details
+      </button>
+    </div>
+  
+    
+  </div>
+    

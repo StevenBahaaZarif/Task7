@@ -1,0 +1,62 @@
+<div class="movie-ticket">
+    <div class="container-fluid">
+      <!-- Item -->
+      <div class="ui-item">
+        <!-- Head -->
+        <div class="ui-head">
+          <!-- Background Image -->
+          <img
+            src="https://img.freepik.com/premium-photo/yellow-gradient-background_64749-3725.jpg"
+            alt=""
+            class="img-responsive bg-img"
+          />
+          <!-- Transparent Background -->
+          <div class="ui-trans clearfix">
+            <!-- Image -->
+            <img [src]="imagePath + selectedProduct.poster_path" alt="" class="img-responsive" />
+            <!-- Details -->
+            <div class="ui-details clearfix">
+              <!-- Movie Name -->
+              <h2>
+                <a href="#">{{ selectedProduct.title }}</a>
+              </h2>
+              <!-- Labels -->
+              <!-- Paragraph -->
+              <p>
+                {{ selectedProduct.overview }}
+              </p>
+              <!-- Heading -->
+            </div>
+          </div>
+        </div>
+        <!-- Review -->
+        <div class="ui-review">
+          <!-- Heading -->
+          <h3>{{ selectedProduct.title }}</h3>
+          <!-- Paragraph -->
+          <p>
+            {{ selectedProduct.overview }}
+          </p>
+  
+          <!-- <mat-chip-listbox aria-label="Fish selection"> -->
+          <!-- <div class="row">
+              <p
+                class="col badge bg-warning ourdisplay m-2"
+                *ngFor="let genre of moviesGenres"
+              >
+                {{ genre.name }}
+              </p>
+            </div> -->
+  
+          <!-- </mat-chip-listbox> -->
+          <!-- Buttons -->
+          <a href="#" class="ui-btn bg-red" routerLink="/movies"
+            ><i class="fa fa-ticket" ></i> Go Back</a
+          >
+          <a href="#" class="ui-btn bg-green" routerLink="/movies"
+            ><i class="fa fa-dot-circle-o" ></i> Buy Item</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
